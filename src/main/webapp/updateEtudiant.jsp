@@ -1,5 +1,9 @@
+<%@ page import="com.app.web_demo.models.Etudiant" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
+<%
+    Etudiant etudiant = (Etudiant) request.getAttribute("etudiant");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,26 +13,27 @@
 </head>
 <body>
 <h1>Ajouter d'un étudiant</h1>
-<form action="etudiant" method="get">
+<form action="EtudiantUpdateExcServlet" method="get">
+    <input type="hidden" name="id" value="<%=etudiant.getId()%>">
     <div class="form-group row">
         <label for="nom" class="col-sm-2 col-form-label">Nom</label>
         <div class="col-sm-6">
-            <input type="text" name="nom" class="form-control" id="nom" placeholder="Nom">
+            <input type="text" name="nom" class="form-control" id="nom" placeholder="Nom" value="<%=etudiant.getNom()%>">
         </div>
     </div>
     <div class="form-group row">
         <label for="prenom" class="col-sm-2 col-form-label">Prénom</label>
         <div class="col-sm-6">
-            <input type="text" name="prenom" class="form-control" id="prenom" placeholder="Prénom">
+            <input type="text" name="prenom" class="form-control" id="prenom" placeholder="Prénom" value="<%=etudiant.getPrenom()%>">
         </div>
     </div>
     <div class="form-group row">
         <label for="note" class="col-sm-2 col-form-label">Note</label>
         <div class="col-sm-6">
-            <input type="text" name="note" class="form-control" id="note" placeholder="Note">
+            <input type="text" name="note" class="form-control" id="note" placeholder="Note" value="<%=etudiant.getNote()%>">
         </div>
     </div>
-    <button type="submit" class="btn btn-danger mb-2">Créer</button>
+    <button type="submit" class="btn btn-danger mb-2">Update</button>
 </form>
 </body>
 </html>

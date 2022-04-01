@@ -53,4 +53,14 @@ public class Etudiant {
     public void setNote(double note) {
         this.note = note;
     }
+
+    @Override
+    public String toString() {
+        return "Etudiant{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", note=" + note +
+                '}';
+    }
 }

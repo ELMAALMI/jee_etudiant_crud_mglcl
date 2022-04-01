@@ -21,7 +21,6 @@ public class HelloServlet extends HttpServlet {
         RequestDispatcher dispatcher = getServletContext()
                 .getRequestDispatcher("/etudiant.jsp");
         dispatcher.forward(request, response);
-
     }
 
     public void destroy() {

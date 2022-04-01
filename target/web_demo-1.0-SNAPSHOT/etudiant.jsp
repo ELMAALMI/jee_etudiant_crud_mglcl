@@ -56,10 +56,10 @@
                     <td><%= etudiant.getNom()%></td>
                     <td><%= etudiant.getNote()%></td>
                     <td class="btn-group" role="group" aria-label="Basic example">
-                        <a type="button" class="btn btn-danger">
+                        <a type="button" href="delete?id=<%=etudiant.getId()%>" class="btn btn-danger">
                             Delete
                         </a>
-                        <a type="button" class="btn btn-warning">
+                        <a type="button" href="update?id=<%=etudiant.getId()%>" class="btn btn-warning">
                             Update
                         </a>
                     </td>

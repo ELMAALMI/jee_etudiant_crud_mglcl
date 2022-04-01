@@ -15,7 +15,7 @@ public class EtudiantServlet extends HttpServlet {
     EtudiantService etudiantService = new EtudiantServiceImp();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request,response);
     }
 
     @Override
@@ -24,7 +24,8 @@ public class EtudiantServlet extends HttpServlet {
         etudiant.setNom(request.getParameter("nom"));
         etudiant.setPrenom(request.getParameter("nom"));
         etudiant.setNote(Double.parseDouble(request.getParameter("note")));
+        System.out.println(etudiant);
         etudiantService.save(etudiant);
-        response.sendRedirect("/");
+        response.sendRedirect("helloServlet");
     }
 }
